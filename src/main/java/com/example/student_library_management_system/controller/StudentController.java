@@ -58,7 +58,6 @@ public class StudentController {
     }
 
 
-
     @GetMapping("/getByPage")
     public List<Student> getStudentByPage(@RequestParam  int pageNo, int pageSize){
         List<Student>  studentList=studentService.getAllStudentsByPage(pageNo,pageSize);

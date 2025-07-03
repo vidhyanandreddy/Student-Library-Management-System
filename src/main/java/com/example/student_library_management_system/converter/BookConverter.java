@@ -2,6 +2,7 @@ package com.example.student_library_management_system.converter;
 
 import com.example.student_library_management_system.model.Book;
 import com.example.student_library_management_system.requestdto.BookRequestDto;
+import com.example.student_library_management_system.responsedto.BookResponseDto;
 
 public class BookConverter {
 
@@ -20,5 +21,25 @@ public class BookConverter {
         // foreign keys should not use in converters
 
         return book;
+    }
+    public static BookResponseDto entityToDto(Book book) {
+        BookResponseDto dto = new BookResponseDto();
+        dto.setId(book.getId());
+        dto.setTitle(book.getTitle());
+        dto.setPublisherName(book.getPublisherName());
+        dto.setPublishedDate(book.getPublishedDate());
+        dto.setPages(book.getPages());
+        dto.setPrice(book.getPrice());
+        dto.setAvailability(book.isAvailability());
+        dto.setRackNo(book.getRackNo());
+        dto.setCategory(book.getCategory().toString());
+
+        if (book.getAuthor() != null) {
+            dto.setAuthorName(book.getAuthor().getName());
+        } else {
+            dto.setAuthorName("Unknown");
+        }
+
+        return dto;
     }
 }
