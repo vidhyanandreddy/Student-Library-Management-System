@@ -31,6 +31,3 @@ This system helps reduce manual work, improve efficiency, and maintain accurate 
 - **Database:** MySQL  
 - **Tools:** IntelliJ 
 
----
-
-## 🗂️ Project Structure
